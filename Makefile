@@ -30,8 +30,8 @@ DummyChoosers.o: DummyChoosers.cpp DummyChoosers.hpp
 DummyGuessers.o: DummyGuessers.cpp DummyGuessers.hpp
 	clang++-5.0 -std=c++17 --compile DummyGuessers.cpp -o DummyGuessers.o
 
-#SmartGuesser.o:  SmartGuesser.cpp SmartGuesser.hpp
-#	clang++-5.0 -std=c++17 --compile SmartGuesser.cpp -o SmartGuesser.o
+SmartGuesser.o:  SmartGuesser.cpp SmartGuesser.hpp
+	clang++-5.0 -std=c++17 --compile SmartGuesser.cpp -o SmartGuesser.o
 
 clean:
-	rm -f DummyGuessers.o DummyChoosers.o calculate.o play.o Test.o Guesser.o Demo.o demo test
+	rm -f DummyGuessers.o DummyChoosers.o calculate.o play.o Test.o Guesser.o Demo.o demo test SmartGuesser.o

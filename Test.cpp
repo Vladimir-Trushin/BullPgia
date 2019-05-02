@@ -144,7 +144,7 @@ int main()
 		for (size_t i = 0; i < 100; i++) // check that SmartGuesser
 		{
 			int len = (rand() % RAND_LEN);
-			int max_limit = len * my_log2(len) + 2 * len + 10;
+			int max_limit = len * my_log2(len) + 15;
 
 			// smarty should always win
 			testcase.CHECK_EQUAL(play(_randy, _smarty, len, max_limit) < max_limit, true);
