@@ -5,8 +5,8 @@
 //
 // The class SmartGuesser provide the algorithm which
 // calculates a number with maximum steps:
-// 1) if length of number is n = 2^x    : O(n*log(n) + 10)
-// 2) if length of number is n = random : O(n*log(n) + 2*n + 10)
+// 1) if length of number is n = 2^x    : n*log(n) + 10
+// 2) if length of number is n = random : n*log(n) + 15
 //
 // The algorithm based on binary search
 //
