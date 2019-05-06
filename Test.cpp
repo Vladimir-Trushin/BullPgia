@@ -85,21 +85,19 @@ int main()
 		// 1
 		testcase.setname("My test: 1"); //--------------------------------->test 1
 
+		// Constan check equal
+		testcase.CHECK_EQUAL(play(_cc, _cg, 0, 100), 1);	   // the special case
+		testcase.CHECK_EQUAL(play(_cc1, _cg1, 1, 100), 1);	 // the special case
+		testcase.CHECK_EQUAL(play(_cc123, _cg123, 3, 100), 1); // the special case
+
+		// check that doesn't throw an exception
+		testcase.CHECK_OK(play(_cc, _cg, 0, 100));		 // the special case
+		testcase.CHECK_OK(play(_cc1, _cg1, 1, 100));	 // the special case
+		testcase.CHECK_OK(play(_cc123, _cg123, 3, 100)); // the special case
+
 		for (size_t i = 0; i < 100; i++) // check that program doesn't throw an exception
 		{
-			// Constan check equal
-			testcase.CHECK_OK(testcase.CHECK_EQUAL(play(_cc, _cg, 0, 100), 1));		  // the special case
-			testcase.CHECK_OK(testcase.CHECK_EQUAL(play(_cc1, _cg1, 1, 100), 1));	 // the special case
-			testcase.CHECK_OK(testcase.CHECK_EQUAL(play(_cc123, _cg123, 3, 100), 1)); // the special case
-
-			// Constan
-			testcase.CHECK_OK(play(_cc, _cg, 0, 100));		 // the special case
-			testcase.CHECK_OK(play(_cc1, _cg1, 1, 100));	 // the special case
-			testcase.CHECK_OK(play(_cc123, _cg123, 3, 100)); // the special case
-
 			// Random
-			testcase.CHECK_OK(play(_randy, _smarty, (rand() % 100), 1000)); // random length
-
 			testcase.CHECK_OK(play(_randy, _rg, 0, 100)); // the special case
 			testcase.CHECK_OK(play(_randy, _rg, 1, 100)); // the special case
 			testcase.CHECK_OK(play(_randy, _rg, 3, 100)); // the special case
@@ -121,8 +119,8 @@ int main()
 			int num1 = 1000000 + (rand() % 1000000); //
 			int num2 = 1000000 + (rand() % 1000000); // random number 7 digits
 
-			string snum1 = to_string(num1);
-			string snum2 = to_string(num2);
+			string snum1 = to_string(num1); //
+			string snum2 = to_string(num2); // int to string
 
 			size_t bull = 0;
 			for (size_t i = 0; i < snum1.size(); i++)
@@ -130,11 +128,12 @@ int main()
 				if (snum1[i] == snum2[i])
 					bull++;
 			}
-			string expected = std::to_string(bull);
-			expected += ',';
-			expected += std::to_string(snum1.size() - bull);
 
-			testcase.CHECK_OK(testcase.CHECK_OUTPUT(calculateBullAndPgia(snum1, snum2), expected));
+			string expected = std::to_string(bull);			 // creating the result "bull number,pgia number"
+			expected += ',';								 // in this case: snum1.size() = snum2.size() = 7
+			expected += std::to_string(snum1.size() - bull); // pgia = 7 - bull
+
+			testcase.CHECK_OUTPUT(calculateBullAndPgia(snum1, snum2), expected);
 		}
 
 		//////

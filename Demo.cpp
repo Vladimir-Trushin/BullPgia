@@ -67,9 +67,10 @@ int main()
 		cout << endl;
 
 		SmartGuesser smarty;
-		cout << "Smart guesser" << endl;
-		cout << "Always win. Maximum possible steps for number with length = n = 2^x: O(n*log(n) + 10)" << endl;
-		cout << "For this example length = n = 4 and limit 100";
+
+		cout << "Smart guesser test: length = 4" << endl;
+		cout << "Maximum possible steps for number with length = n = 2^x: n*log(n) + 10" << endl;
+		cout << "For this example length = n = 4 and max steps 100";
 		for (size_t i = 0; i < 100; ++i)
 		{
 			int num = play(randy, smarty, 4, 100); // smarty should always win in at most 10 turns!
