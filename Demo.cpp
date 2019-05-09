@@ -39,8 +39,8 @@ int main()
 		cout << endl;
 		cout << endl;
 		cout << "Random guesser";
-		size_t bad = 0;
-		for (size_t i = 0; i < 100; ++i) // guesser should often win but sometimes lose.
+		uint bad = 0;
+		for (uint i = 0; i < 100; ++i) // guesser should often win but sometimes lose.
 		{
 			int num = play(randy, guessy, 2, 100);
 
@@ -71,7 +71,7 @@ int main()
 		cout << "Smart guesser test: length = 4" << endl;
 		cout << "Maximum possible steps for number with length = n = 2^x: n*log(n) + 10" << endl;
 		cout << "For this example length = n = 4 and max steps 100";
-		for (size_t i = 0; i < 100; ++i)
+		for (uint i = 0; i < 100; ++i)
 		{
 			int num = play(randy, smarty, 4, 100); // smarty should always win in at most 10 turns!
 
@@ -93,7 +93,7 @@ int main()
 		cout << "For this example length = random[0, 10] and max steps: n*log(n) + 15" << endl;
 
 		bad = 0;
-		for (size_t i = 0; i < 100; ++i)
+		for (uint i = 0; i < 100; ++i)
 		{
 			int len = (rand() % RAND_SORT_LEN);
 			int max = len * SmartGuesser::log2(len) + 15; // n*log(n) + 15
@@ -129,7 +129,7 @@ int main()
 		cout << "For this example length = random[20, 100] and max steps: n*log(n)" << endl;
 
 		bad = 0;
-		for (size_t i = 0; i < 100; ++i)
+		for (uint i = 0; i < 100; ++i)
 		{
 			int len = (20 + (rand() % (RAND_LEN - 20)));
 			int max = len * SmartGuesser::log2(len); // n*log(n)

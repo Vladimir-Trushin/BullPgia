@@ -58,10 +58,10 @@ int main()
 		testcase.setname("Play with smart guesser");
 		RandomChooser randy;
 		SmartGuesser smarty;
-		size_t bad = 0;
-		for (size_t i = 0; i < 100; ++i)
+		uint bad = 0;
+		for (uint i = 0; i < 100; ++i)
 		{
-			size_t num = play(randy, smarty, 4, 100);
+			uint num = play(randy, smarty, 4, 100);
 
 			if (num > 100)
 				bad++;
@@ -95,7 +95,7 @@ int main()
 		testcase.CHECK_OK(play(_cc1, _cg1, 1, 100));	 // the special case
 		testcase.CHECK_OK(play(_cc123, _cg123, 3, 100)); // the special case
 
-		for (size_t i = 0; i < 100; i++) // check that program doesn't throw an exception
+		for (uint i = 0; i < 100; i++) // check that program doesn't throw an exception
 		{
 			// Random
 			testcase.CHECK_OK(play(_randy, _rg, 0, 100)); // the special case
@@ -114,7 +114,7 @@ int main()
 		// 2
 		testcase.setname("My test: 2"); //--------------------------------->test 2
 
-		for (size_t i = 0; i < 100; i++) // check the function calculateBullAndPgia()
+		for (uint i = 0; i < 100; i++) // check the function calculateBullAndPgia()
 		{
 			int num1 = 1000000 + (rand() % 1000000); //
 			int num2 = 1000000 + (rand() % 1000000); // random number 7 digits
@@ -122,8 +122,8 @@ int main()
 			string snum1 = to_string(num1); //
 			string snum2 = to_string(num2); // int to string
 
-			size_t bull = 0;
-			for (size_t i = 0; i < snum1.size(); i++)
+			uint bull = 0;
+			for (uint i = 0; i < snum1.size(); i++)
 			{
 				if (snum1[i] == snum2[i])
 					bull++;
@@ -140,7 +140,7 @@ int main()
 		// 2
 		testcase.setname("My test: 3"); //--------------------------------->test 3
 
-		for (size_t i = 0; i < 100; i++) // check that SmartGuesser
+		for (uint i = 0; i < 100; i++) // check that SmartGuesser
 		{
 			int len = (rand() % RAND_LEN);
 			int max_limit = len * my_log2(len) + 15;

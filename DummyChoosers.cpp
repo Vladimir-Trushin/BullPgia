@@ -1,10 +1,10 @@
 #include "DummyChoosers.hpp"
 #include <stdlib.h>
 
-std::string RandomChooser::choose(size_t length)
+std::string RandomChooser::choose(uint length)
 {
 	std::string r = "";
-	for (size_t i = 0; i < length; ++i)
+	for (uint i = 0; i < length; ++i)
 	{
 		char c = '0' + (rand() % 10);
 		r += c;

@@ -21,5 +21,5 @@ namespace bullpgia
 	 *  If guesser cannot guess the real string in maxTurns turns, 
 	 *     then the return value is maxTurns+1.
 	 */
-size_t play(Chooser &chooser, Guesser &guesser, size_t length, size_t maxTurns);
+uint play(Chooser &chooser, Guesser &guesser, uint length, uint maxTurns);
 } // namespace bullpgia

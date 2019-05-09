@@ -12,16 +12,16 @@ using std::string;
 
 namespace bullpgia
 {
-size_t play(Chooser &chooser, Guesser &guesser, size_t length, size_t maxTurns)
+uint play(Chooser &chooser, Guesser &guesser, uint length, uint maxTurns)
 {
-	const size_t TECHNICAL_VICTORY_TO_GUESSER = 0;
-	const size_t TECHNICAL_VICTORY_TO_CHOOSER = maxTurns + 1;
+	const uint TECHNICAL_VICTORY_TO_GUESSER = 0;
+	const uint TECHNICAL_VICTORY_TO_CHOOSER = maxTurns + 1;
 
 	string choice = chooser.choose(length);
 	if (choice.length() != length) // Illegal choice
 		return TECHNICAL_VICTORY_TO_GUESSER;
 	guesser.startNewGame(length); // tell the guesser that a new game starts now
-	size_t indexOfTurn;
+	uint indexOfTurn;
 	for (indexOfTurn = 0; indexOfTurn < maxTurns; ++indexOfTurn)
 	{
 		string guess = guesser.guess();

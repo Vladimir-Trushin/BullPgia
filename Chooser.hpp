@@ -13,6 +13,6 @@ public:
 
   ////----------------------------------------------------------------------
   // Pure virtual function
-  virtual std::string choose(size_t len) = 0;
+  virtual std::string choose(uint len) = 0;
 };
 } // namespace bullpgia

@@ -11,7 +11,7 @@ class ConstantChooser : public bullpgia::Chooser
 
 public:
 	ConstantChooser(const string &constantString) { myConstantString = constantString; }
-	string choose(size_t length) override
+	string choose(uint length) override
 	{
 		return myConstantString;
 	}
@@ -22,5 +22,5 @@ public:
  */
 class RandomChooser : public bullpgia::Chooser
 {
-	string choose(size_t length) override;
+	string choose(uint length) override;
 };

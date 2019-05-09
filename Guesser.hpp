@@ -7,7 +7,7 @@ namespace bullpgia
 class Guesser
 {
 protected:
-  size_t length;
+  uint length;
 
 public:
   ////----------------------------------------------------------------------
@@ -16,7 +16,7 @@ public:
 
   ////----------------------------------------------------------------------
   // Stor the length
-  virtual void startNewGame(size_t len);
+  virtual void startNewGame(uint len);
 
   ////----------------------------------------------------------------------
   // Pure virtual function

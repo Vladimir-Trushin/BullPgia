@@ -10,7 +10,7 @@ Guesser::~Guesser()
 
 ////----------------------------------------------------------------------
 // Stor the length
-void Guesser::startNewGame(size_t len)
+void Guesser::startNewGame(uint len)
 {
     length = len;
 }

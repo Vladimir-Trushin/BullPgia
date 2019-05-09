@@ -38,7 +38,7 @@ private:
 
   ////----------------------------------------------------------------------
   // Creating a guess's number
-  void create_num(char ch, size_t left, size_t right);
+  void create_num(char ch, uint left, uint right);
 
   ////----------------------------------------------------------------------
   // Calculate the number of each digit
@@ -63,7 +63,7 @@ public:
 
   ////----------------------------------------------------------------------
   // Preparing the SmartGuesser
-  void startNewGame(size_t len) override;
+  void startNewGame(uint len) override;
 
   ////----------------------------------------------------------------------
   // Returning the guess for each step or right answer in the end

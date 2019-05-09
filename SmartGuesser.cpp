@@ -28,9 +28,9 @@ bool sort_fun(vector<int> left, vector<int> right)
 
 ////----------------------------------------------------------------------
 // Creating a guess's number
-void SmartGuesser::create_num(char ch, size_t left, size_t right)
+void SmartGuesser::create_num(char ch, uint left, uint right)
 {
-    for (size_t i = left; i < right; i++)
+    for (uint i = left; i < right; i++)
     {
         if (_right[i] != -1) // will mark 'x' if the digit was founded
         {
@@ -172,7 +172,7 @@ void SmartGuesser::second_process(int bull)
 
     if (_count_step == 9) // the end of second process
     {
-        for (size_t i = 0; i < length; i++) // add the last stack of identical digits
+        for (uint i = 0; i < length; i++) // add the last stack of identical digits
         {
             if (_right[i] == -1)
                 _right[i] = char('0' + _amount_of_num[_count_step][0]);
@@ -184,7 +184,7 @@ void SmartGuesser::second_process(int bull)
 
 ////----------------------------------------------------------------------
 // Preparing the SmartGuesser
-void SmartGuesser::startNewGame(size_t len)
+void SmartGuesser::startNewGame(uint len)
 {
     length = len;
 
@@ -197,15 +197,15 @@ void SmartGuesser::startNewGame(size_t len)
     _map_step.resize(log2(length) + 2, vector<int>(3));
 
     _right.resize(length);
-    for (size_t i = 0; i < length; i++) // will mark that digit is not founded
+    for (uint i = 0; i < length; i++) // will mark that digit is not founded
         _right[i] = -1;
 
     _guess.resize(length);
-    for (size_t i = 0; i < length; i++) // always start "0...0"
+    for (uint i = 0; i < length; i++) // always start "0...0"
         _guess[i] = '0';
 
     _amount_of_num.resize(10, vector<int>(2));
-    for (size_t i = 0; i < 10; i++)
+    for (uint i = 0; i < 10; i++)
     {
         _amount_of_num[i][0] = i; // the digit
         _amount_of_num[i][1] = 0; // the amount of digit
