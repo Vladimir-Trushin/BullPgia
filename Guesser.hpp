@@ -12,11 +12,16 @@ protected:
 public:
   ////----------------------------------------------------------------------
   // Virtual destructor
-  virtual ~Guesser();
+  virtual ~Guesser()
+  {
+  }
 
   ////----------------------------------------------------------------------
   // Stor the length
-  virtual void startNewGame(uint len);
+  virtual void startNewGame(uint len)
+  {
+    length = len;
+  }
 
   ////----------------------------------------------------------------------
   // Pure virtual function
@@ -24,6 +29,9 @@ public:
 
   ////----------------------------------------------------------------------
   // Do nothing
-  virtual void learn(std::string bp);
+  virtual void learn(std::string bp)
+  {
+    // Do nothing
+  }
 };
 } // namespace bullpgia
