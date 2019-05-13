@@ -3,6 +3,10 @@
 all: test
 	./$<
 
+#main: main.cpp
+#	clang++-5.0 -std=c++17 main.cpp -o main
+
+
 demo:  Demo.o DummyChoosers.o DummyGuessers.o play.o calculate.o SmartGuesser.o
 	clang++-5.0 -std=c++17 $^ -o demo
 

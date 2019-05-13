@@ -37,6 +37,10 @@ private:
   int _r;                             // right index (need for the second process)
 
   ////----------------------------------------------------------------------
+  // Creating random numbers [0-9]
+  vector<int> random_num();
+
+  ////----------------------------------------------------------------------
   // Creating a guess's number
   void create_num(char ch, uint left, uint right);
 

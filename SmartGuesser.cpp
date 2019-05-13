@@ -8,6 +8,23 @@
 namespace bullpgia
 {
 ////----------------------------------------------------------------------
+// Creating random numbers [0-9]
+vector<int> SmartGuesser::random_num()
+{
+    vector<int> ret(10);
+    vector<int> numbers{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    for (uint i = 0; i < 10; i++)
+    {
+        int index = random() % numbers.size();
+        ret[i] = numbers[index];
+        numbers.erase(numbers.begin() + index);
+    }
+
+    return ret;
+}
+
+////----------------------------------------------------------------------
 // Simple log2 function
 int SmartGuesser::log2(int num)
 {
@@ -67,7 +84,7 @@ void SmartGuesser::first_process(int bull)
     }
 
     _count_step++;
-    create_num(char('0' + _count_step), 0, length);
+    create_num(char('0' + _amount_of_num[_count_step][0]), 0, length);
 }
 
 ////----------------------------------------------------------------------
@@ -200,16 +217,18 @@ void SmartGuesser::startNewGame(uint len)
     for (uint i = 0; i < length; i++) // will mark that digit is not founded
         _right[i] = -1;
 
-    _guess.resize(length);
-    for (uint i = 0; i < length; i++) // always start "0...0"
-        _guess[i] = '0';
-
+    vector<int> ran_num = random_num();
     _amount_of_num.resize(10, vector<int>(2));
+
     for (uint i = 0; i < 10; i++)
     {
-        _amount_of_num[i][0] = i; // the digit
-        _amount_of_num[i][1] = 0; // the amount of digit
+        _amount_of_num[i][0] = ran_num[i]; // the random digit
+        _amount_of_num[i][1] = 0;          // the amount of digit
     }
+
+    _guess.resize(length);
+    for (uint i = 0; i < length; i++) // start first random number
+        _guess[i] = char('0' + _amount_of_num[_count_step][0]);
 }
 
 ////----------------------------------------------------------------------
