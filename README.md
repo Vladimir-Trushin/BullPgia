@@ -1,8 +1,6 @@
-task_4
+Vladimir Trushin
 
-Name of student: Vladimir Trushin
-
-#task_4 Game bullpgia
+Game bullpgia
 
 To create the demo and run, use the following command: make demo && ./demo
 
